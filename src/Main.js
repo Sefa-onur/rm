@@ -9,9 +9,7 @@ const App = ({ navigation }) => {
 
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/episode')
-
             .then(res => {
-                console.log(res.data.results)
                 setdata(res.data.results)
             })
     }, [])

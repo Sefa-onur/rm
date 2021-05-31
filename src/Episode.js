@@ -8,7 +8,7 @@ const Episode = ({ navigation, route }) => {
 
     const renderItem = (item) => {
         return (
-            <TouchableOpacity onPress = {() => navigation.navigate('Character') } >
+            <TouchableOpacity onPress = {() => navigation.navigate('Character',{item}) } >
                 <View style={styles.CharactersView} >
                     <Text>
                         {item.index + 1}.
@@ -46,7 +46,7 @@ const Episode = ({ navigation, route }) => {
             <FlatList
                 data={data.characters}
                 renderItem={renderItem}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.index}
             />
         </View>
     )
